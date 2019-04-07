@@ -1,0 +1,365 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D7526ABC225A9E2A00947D86 /* ThinkBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7526ABB225A9E2A00947D86 /* ThinkBarItemView.swift */; };
+		D7526ABF225A9EC500947D86 /* ThinkBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7526ABE225A9EC500947D86 /* ThinkBarDelegate.swift */; };
+		D7526AC1225A9ECC00947D86 /* ThinkBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7526AC0225A9ECC00947D86 /* ThinkBarItem.swift */; };
+		D7526AC3225A9F5B00947D86 /* ThinkBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7526AC2225A9F5B00947D86 /* ThinkBar.swift */; };
+		D780D42B2259E89900503D9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780D42A2259E89900503D9D /* AppDelegate.swift */; };
+		D780D42D2259E89900503D9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780D42C2259E89900503D9D /* ViewController.swift */; };
+		D780D4302259E89900503D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D780D42E2259E89900503D9D /* Main.storyboard */; };
+		D780D4322259E89D00503D9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D780D4312259E89D00503D9D /* Assets.xcassets */; };
+		D780D4352259E89D00503D9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D780D4332259E89D00503D9D /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D7526ABB225A9E2A00947D86 /* ThinkBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinkBarItemView.swift; sourceTree = "<group>"; };
+		D7526ABE225A9EC500947D86 /* ThinkBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinkBarDelegate.swift; sourceTree = "<group>"; };
+		D7526AC0225A9ECC00947D86 /* ThinkBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinkBarItem.swift; sourceTree = "<group>"; };
+		D7526AC2225A9F5B00947D86 /* ThinkBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinkBar.swift; sourceTree = "<group>"; };
+		D780D4272259E89900503D9D /* ThinkBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D780D42A2259E89900503D9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D780D42C2259E89900503D9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D780D42F2259E89900503D9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D780D4312259E89D00503D9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D780D4342259E89D00503D9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D780D4362259E89D00503D9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D780D4242259E89800503D9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D7526ABD225A9EA600947D86 /* ThinkBar */ = {
+			isa = PBXGroup;
+			children = (
+				D7526ABB225A9E2A00947D86 /* ThinkBarItemView.swift */,
+				D7526ABE225A9EC500947D86 /* ThinkBarDelegate.swift */,
+				D7526AC0225A9ECC00947D86 /* ThinkBarItem.swift */,
+				D7526AC2225A9F5B00947D86 /* ThinkBar.swift */,
+			);
+			path = ThinkBar;
+			sourceTree = "<group>";
+		};
+		D780D41E2259E89800503D9D = {
+			isa = PBXGroup;
+			children = (
+				D780D4292259E89900503D9D /* ThinkBar */,
+				D780D4282259E89900503D9D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D780D4282259E89900503D9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D780D4272259E89900503D9D /* ThinkBar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D780D4292259E89900503D9D /* ThinkBar */ = {
+			isa = PBXGroup;
+			children = (
+				D780D42A2259E89900503D9D /* AppDelegate.swift */,
+				D780D42C2259E89900503D9D /* ViewController.swift */,
+				D780D42E2259E89900503D9D /* Main.storyboard */,
+				D780D4312259E89D00503D9D /* Assets.xcassets */,
+				D780D4332259E89D00503D9D /* LaunchScreen.storyboard */,
+				D780D4362259E89D00503D9D /* Info.plist */,
+				D7526ABD225A9EA600947D86 /* ThinkBar */,
+			);
+			path = ThinkBar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D780D4262259E89800503D9D /* ThinkBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D780D4392259E89D00503D9D /* Build configuration list for PBXNativeTarget "ThinkBar" */;
+			buildPhases = (
+				D780D4232259E89800503D9D /* Sources */,
+				D780D4242259E89800503D9D /* Frameworks */,
+				D780D4252259E89800503D9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThinkBar;
+			productName = ThinkBar;
+			productReference = D780D4272259E89900503D9D /* ThinkBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D780D41F2259E89800503D9D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Wesaturate;
+				TargetAttributes = {
+					D780D4262259E89800503D9D = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = D780D4222259E89800503D9D /* Build configuration list for PBXProject "ThinkBar" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D780D41E2259E89800503D9D;
+			productRefGroup = D780D4282259E89900503D9D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D780D4262259E89800503D9D /* ThinkBar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D780D4252259E89800503D9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D780D4352259E89D00503D9D /* LaunchScreen.storyboard in Resources */,
+				D780D4322259E89D00503D9D /* Assets.xcassets in Resources */,
+				D780D4302259E89900503D9D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D780D4232259E89800503D9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D780D42D2259E89900503D9D /* ViewController.swift in Sources */,
+				D780D42B2259E89900503D9D /* AppDelegate.swift in Sources */,
+				D7526AC3225A9F5B00947D86 /* ThinkBar.swift in Sources */,
+				D7526ABC225A9E2A00947D86 /* ThinkBarItemView.swift in Sources */,
+				D7526ABF225A9EC500947D86 /* ThinkBarDelegate.swift in Sources */,
+				D7526AC1225A9ECC00947D86 /* ThinkBarItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D780D42E2259E89900503D9D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D780D42F2259E89900503D9D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D780D4332259E89D00503D9D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D780D4342259E89D00503D9D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D780D4372259E89D00503D9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D780D4382259E89D00503D9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D780D43A2259E89D00503D9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JL7TCK5Y58;
+				INFOPLIST_FILE = ThinkBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.gifton.ThinkBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D780D43B2259E89D00503D9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JL7TCK5Y58;
+				INFOPLIST_FILE = ThinkBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.gifton.ThinkBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D780D4222259E89800503D9D /* Build configuration list for PBXProject "ThinkBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D780D4372259E89D00503D9D /* Debug */,
+				D780D4382259E89D00503D9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D780D4392259E89D00503D9D /* Build configuration list for PBXNativeTarget "ThinkBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D780D43A2259E89D00503D9D /* Debug */,
+				D780D43B2259E89D00503D9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D780D41F2259E89800503D9D /* Project object */;
+}
