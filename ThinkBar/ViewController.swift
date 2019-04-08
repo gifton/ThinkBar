@@ -9,13 +9,12 @@
 import UIKit
 
 class HomeBar: UIViewController, ThinkBarDelegate {
-    func tabSelected(_ index: Int) {
-        print(index)
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.createSimpleTabBar()
+        view.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+        createSimpleTabBar()
+        navigationController?.isNavigationBarHidden = true
     }
     
     private func createSimpleTabBar() {
@@ -36,4 +35,10 @@ class HomeBar: UIViewController, ThinkBarDelegate {
         ]
         NSLayoutConstraint.activate(constraints)
     }
+    
+    func tabSelected(_ index: Int) {
+        print("Selected tab: ", index)
+    }
 }
+
+
