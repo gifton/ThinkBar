@@ -41,11 +41,38 @@ class ManuBlock: TBBaseMenu {
 
 class HomeBar: UIViewController, ThinkBarDelegate {
 
+    let cv: UICollectionView = {
+        let layout = TBSmoothScrollLayout()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        return cv
+    }()
+    
+    let viewAnimator = TBViewAnimator()
+    var titleSize: CGSize = .zero
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         createSimpleTabBar()
         navigationController?.isNavigationBarHidden = true
+        
+        view.addSubview(cv)
+        
+        cv.register(UINib(nibName: "Header", bundle: nil),
+                                forSupplementaryViewOfKind: TBSmoothScrollLayout.kCBAnimatedLayoutHeader,
+                                withReuseIdentifier: TBSmoothScrollLayout.kCBAnimatedLayoutHeader)
+        cv.register(UINib(nibName: "Menu", bundle: nil),
+                                forSupplementaryViewOfKind: TBSmoothScrollLayout.kCBAnimatedLayoutMenu,
+                                withReuseIdentifier: TBSmoothScrollLayout.kCBAnimatedLayoutMenu)
+        cv.register(UINib(nibName: "Title", bundle: nil),
+                                forSupplementaryViewOfKind: TBSmoothScrollLayout.kCBAnimatedLayoutTitle,
+                                withReuseIdentifier: TBSmoothScrollLayout.kCBAnimatedLayoutTitle)
+        if let title = UINib(nibName: "Title", bundle: nil).instantiate(withOwner: nil, options: nil).first as? UIView {
+            title.sizeToFit()
+            titleSize = title.frame.size
+        }
+        
     }
     
     private func createSimpleTabBar() {
@@ -73,3 +100,52 @@ class HomeBar: UIViewController, ThinkBarDelegate {
 }
 
 
+extension HomeBar: UICollectionViewSmoothScrollLayoutDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let supplementaryView: UICollectionReusableView
+        switch kind {
+        case TBSmoothScrollLayout.kCBAnimatedLayoutHeader,
+             TBSmoothScrollLayout.kCBAnimatedLayoutMenu,
+             TBSmoothScrollLayout.kCBAnimatedLayoutTitle:
+            supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kind, for: indexPath)
+        default:
+            fatalError("unexpected element type")
+        }
+        if let animatableView = supplementaryView as? TBAnimatable {
+            viewAnimator.register(animatableView: animatableView)
+        }
+        return supplementaryView
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    var dateFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter
+    }
+    var startDate: Date {
+        return dateFormatter.date(from: "11:00") ?? Date()
+    }
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "test", for: indexPath)
+        if let cell = cell as? TestCell {
+            cell.lblTime.text = dateFormatter.string(from: startDate.addingTimeInterval(TimeInterval(60*30*indexPath.item)))
+            viewAnimator.register(animatableView: cell)
+            cell.lblPrice.text = "$\(Int.random(in: 1...12) * 10)"
+        }
+        return cell
+    }
+    
+    @objc func collectionView(_ collectionView: UICollectionView, didUpdateAnimationTo progress: CGFloat) {
+        viewAnimator.updateAnimation(toProgress: progress)
+    }
+    
+    @objc func collectionView(_ collectionView: UICollectionView, titleSizeForProgress progress: CGFloat) -> CGSize {
+        return titleSize
+    }
+    
+}
