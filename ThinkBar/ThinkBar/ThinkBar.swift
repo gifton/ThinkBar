@@ -28,7 +28,7 @@ public class ThinkBar: UIView {
         }
     }
     
-    private let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight)) as UIVisualEffectView
+    private let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .regular)) as UIVisualEffectView
     public var backgroundBlurEnabled: Bool = true {
         didSet {
             self.visualEffectView.isHidden = !self.backgroundBlurEnabled
@@ -43,12 +43,12 @@ public class ThinkBar: UIView {
         super.init(frame: CGRect.zero)
         
         
-        bg.backgroundColor = UIColor(white: 1.0, alpha: 0.8)
+        bg.backgroundColor = .lightGray
         addSubview(bg)
         
-        self.addSubview(visualEffectView)
+//        self.addSubview(visualEffectView)
         
-        keyLine.backgroundColor = UIColor(white: 0.9, alpha: 1.0)
+        keyLine.backgroundColor = .lightGray
         self.addSubview(keyLine)
         
         var i = 0
@@ -61,6 +61,7 @@ public class ThinkBar: UIView {
         }
         
         self.selectItem(0, animated: false)
+        
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -100,8 +101,13 @@ public class ThinkBar: UIView {
             v.setSelected(selected, animated: animated)
         }
         
+        for item in itemViews {
+            if item.selected == true {
+                item.frame.size.width += 100
+            } else {
+                item.frame.size.width -= 33
+            }
+        }
         self.delegate?.tabSelected(selectedIndex)
     }
 }
-
-

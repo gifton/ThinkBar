@@ -20,9 +20,10 @@ class HomeBar: UIViewController, ThinkBarDelegate {
     
     private func createSimpleTabBar() {
         var items = [ThinkBarItem]()
-        items.append(ThinkBarItem(title: "Home", icon: #imageLiteral(resourceName: "HomeButton")))
-        items.append(ThinkBarItem(title: "Profile", icon: #imageLiteral(resourceName: "person")))
-        items.append(ThinkBarItem(title: "Tickets", icon: #imageLiteral(resourceName: "tickets")))
+        items.append(ThinkBarItem(title: "Home", icon: #imageLiteral(resourceName: "home")))
+        items.append(ThinkBarItem(title: "Search", icon: #imageLiteral(resourceName: "Search")))
+        items.append(ThinkBarItem(title: "Profile", icon: #imageLiteral(resourceName: "user-astronaut")))
+        items.append(ThinkBarItem(title: "THiNK", icon: #imageLiteral(resourceName: "cloud")))
         let tabBar = ThinkBar(items: items)
         tabBar.translatesAutoresizingMaskIntoConstraints = false
         tabBar.delegate = self

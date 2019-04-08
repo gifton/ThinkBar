@@ -14,7 +14,7 @@ class ThinkBarItemView: UIView {
     let titleLabel = UILabel()
     let iconView = UIImageView()
     
-    private var selected = false
+    public var selected = false
     
     override var tintColor: UIColor! {
         didSet {
@@ -52,9 +52,11 @@ class ThinkBarItemView: UIView {
             
             if let icon = self.item.icon {
                 iconView.image = icon.withRenderingMode(.alwaysTemplate)
+                iconView.contentMode = .scaleAspectFit
                 self.addSubview(iconView)
             }
         }
+        tintColor = .white
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -70,38 +72,27 @@ class ThinkBarItemView: UIView {
             titleLabel.frame = CGRect(x: 0, y: self.frame.height, width: self.frame.width, height: 14)
             iconView.frame = CGRect(x: self.frame.width / 2 - 13, y: 12, width: 26, height: 20)
         }
+        
     }
+    
+    
     
     func setSelected(_ selected: Bool, animated: Bool = true) {
         self.selected = selected
         self.iconView.tintColor = selected ? self.tintColor : UIColor(white: 0.6, alpha: 1.0)
         
         if (animated && selected) {
-            /*
-             ICON
-             */
-            UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseInOut, animations: {
-                self.iconView.frame.origin.y = 5
-            }, completion: { finished in
-                UIView.animate(withDuration: 0.4, delay: 0.5, options: UIView.AnimationOptions(), animations: {
-                    self.iconView.frame.origin.y = 12
-                })
-            })
-            
-            
-            /*
-             TEXT
-             */
-            UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions(), animations: {
+            UIView.animate(withDuration: 0.2) {
                 self.titleLabel.frame.origin.y = 28
                 self.titleLabel.alpha = 1.0
-            }, completion: { finished in
-                UIView.animate(withDuration: 0.2, delay: 0.5, options: UIView.AnimationOptions(), animations: {
-                    self.titleLabel.frame.origin.y = self.frame.size.height
-                    self.titleLabel.alpha = 0.0
-                }, completion: { finished in
-                })
-            })
+                self.iconView.frame.origin.y = 5
+            }
+        } else {
+            UIView.animate(withDuration: 0.2) {
+                self.titleLabel.frame.origin.y = self.frame.size.height
+                self.titleLabel.alpha = 0.0
+                self.iconView.frame.origin.y = 12
+            }
         }
     }
 }
