@@ -12,7 +12,6 @@ import UIKit
 public class ThinkBar: UIView {
     
     public weak var delegate: ThinkBarDelegate?
-    public let keyLine = UIView()
     public override var tintColor: UIColor! {
         didSet {
             for itv in self.itemViews {
@@ -43,13 +42,10 @@ public class ThinkBar: UIView {
         super.init(frame: CGRect.zero)
         
         
-        bg.backgroundColor = .lightGray
+        bg.backgroundColor = .black
         addSubview(bg)
         
-//        self.addSubview(visualEffectView)
-        
-        keyLine.backgroundColor = .lightGray
-        self.addSubview(keyLine)
+        self.addSubview(visualEffectView)
         
         var i = 0
         for item in items {
@@ -72,7 +68,6 @@ public class ThinkBar: UIView {
         super.layoutSubviews()
         bg.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 1000)
         visualEffectView.frame = bg.bounds
-        keyLine.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 1)
         
         let itemWidth = self.frame.width / CGFloat(self.itemViews.count)
         for (i, itemView) in self.itemViews.enumerated() {
