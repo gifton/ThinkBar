@@ -11,7 +11,8 @@ import UIKit
 
 class TBTitleBlock: UICollectionReusableView, TBAnimatable {
     
-    weak var lblTitle: UILabel!
+    
+    @IBOutlet weak var lblTitle: UILabel!
     var startColor: UIColor = #colorLiteral(red: 0.8941176471, green: 0.8, blue: 0.7607843137, alpha: 1)
     var finishColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     

@@ -22,6 +22,8 @@
 		D7526AD8225B89A200947D86 /* Title.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7526AD7225B89A200947D86 /* Title.xib */; };
 		D7526ADB225B89B000947D86 /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7526AD9225B89B000947D86 /* Header.xib */; };
 		D7526ADC225B89B000947D86 /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7526ADA225B89B000947D86 /* Menu.xib */; };
+		D7536F69225C074B003F0920 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7536F68225C074B003F0920 /* HomeView.swift */; };
+		D7536F6B225C5582003F0920 /* HomeCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7536F6A225C5582003F0920 /* HomeCollectionReusableView.swift */; };
 		D780D42B2259E89900503D9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780D42A2259E89900503D9D /* AppDelegate.swift */; };
 		D780D42D2259E89900503D9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780D42C2259E89900503D9D /* ViewController.swift */; };
 		D780D4302259E89900503D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D780D42E2259E89900503D9D /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		D7526AD7225B89A200947D86 /* Title.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Title.xib; sourceTree = "<group>"; };
 		D7526AD9225B89B000947D86 /* Header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Header.xib; sourceTree = "<group>"; };
 		D7526ADA225B89B000947D86 /* Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Menu.xib; sourceTree = "<group>"; };
+		D7536F68225C074B003F0920 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D7536F6A225C5582003F0920 /* HomeCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionReusableView.swift; sourceTree = "<group>"; };
 		D780D4272259E89900503D9D /* ThinkBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D780D42A2259E89900503D9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D780D42C2259E89900503D9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +98,15 @@
 			path = SmoothScroll;
 			sourceTree = "<group>";
 		};
+		D7536F67225C0738003F0920 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				D7536F68225C074B003F0920 /* HomeView.swift */,
+				D7536F6A225C5582003F0920 /* HomeCollectionReusableView.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		D780D41E2259E89800503D9D = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +126,7 @@
 		D780D4292259E89900503D9D /* ThinkBar */ = {
 			isa = PBXGroup;
 			children = (
+				D7536F67225C0738003F0920 /* Animations */,
 				D780D42A2259E89900503D9D /* AppDelegate.swift */,
 				D780D42C2259E89900503D9D /* ViewController.swift */,
 				D7526ACE225B804900947D86 /* SmoothScroll */,
@@ -202,6 +216,7 @@
 				D7526AD2225B82E300947D86 /* TBBaseCell.swift in Sources */,
 				D7526ACB225B7CF400947D86 /* Animator.swift in Sources */,
 				D780D42D2259E89900503D9D /* ViewController.swift in Sources */,
+				D7536F69225C074B003F0920 /* HomeView.swift in Sources */,
 				D780D42B2259E89900503D9D /* AppDelegate.swift in Sources */,
 				D7526ACD225B7D3300947D86 /* UIColor+Decomposable.swift in Sources */,
 				D7526AC3225A9F5B00947D86 /* ThinkBar.swift in Sources */,
@@ -210,6 +225,7 @@
 				D7526AD0225B80ED00947D86 /* TBTitleBlock.swift in Sources */,
 				D7526ABF225A9EC500947D86 /* ThinkBarDelegate.swift in Sources */,
 				D7526AC1225A9ECC00947D86 /* ThinkBarItem.swift in Sources */,
+				D7536F6B225C5582003F0920 /* HomeCollectionReusableView.swift in Sources */,
 				D7526AC9225B7CD900947D86 /* TBBaseHeader.swift in Sources */,
 				D7526AD4225B844100947D86 /* TBLayout.swift in Sources */,
 				D7526AD6225B854B00947D86 /* TBBaseMenu.swift in Sources */,
