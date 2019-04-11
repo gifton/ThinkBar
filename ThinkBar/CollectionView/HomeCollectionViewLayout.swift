@@ -8,8 +8,10 @@
 
 import UIKit
 
-protocol HomeLayoutDelegate: class {
-    func collectionView(_ collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat
+@objc protocol HomeLayoutDelegate: class {
+    @objc func collectionView(_ collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat
+    @objc optional func collectionView(_ collectionView: UICollectionView, didUpdateAnimationTo progress: CGFloat)
+    @objc optional func collectionView(_ collectionView: UICollectionView, titleSizeForProgress progress: CGFloat) -> CGSize
 }
 
 class HomeLayout: UICollectionViewLayout {
@@ -38,17 +40,24 @@ class HomeLayout: UICollectionViewLayout {
         return CGSize(width: contentWidth, height: contentHeight)
     }
     
+    public var spacing: CGFloat = 1.0  {
+        didSet { resetStoredValues() }
+    }
     public var headerMaxHeight: CGFloat = round(UIScreen.main.bounds.height * 0.486)  {
         didSet { resetStoredValues() }
     }
-    public var headerMinHeight: CGFloat = 197 {
+    public var headerMinHeight: CGFloat = 100 {
         didSet { resetStoredValues() }
     }
-    private var animationProgress: CGFloat {
-        let offset = collectionView?.contentOffset.y ?? 0
-        let normalizedOffset = max(0.0, min(1.0, offset/animationScrollLength))
-        return normalizedOffset
+    public var cellsMaxMargin: CGFloat = 18.0 {
+        didSet { resetStoredValues() }
     }
+    private var itemSize: CGFloat {
+        return (width - spacing - cellsMargin * 2)/2.0
+    }
+    private var cellsMargin: CGFloat {
+        return cellsMaxMargin * (1 - animationProgress)
+    } 
     private var defaultCellZIndex: Int = 5
     public var animationScrollLength: CGFloat = 150.0  {
         didSet {
@@ -56,8 +65,17 @@ class HomeLayout: UICollectionViewLayout {
             lastCellZIndex = defaultCellZIndex
         }
     }
+    private var width: CGFloat = 0
+    private var numberOfItems = 0
+    private var animationProgress: CGFloat {
+        let offset = collectionView?.contentOffset.y ?? 0
+        let normalizedOffset = max(0.0, min(1.0, offset/animationScrollLength))
+        return normalizedOffset
+    }
     
+    // Prepare collumns layout
     override func prepare() {
+        register(HomeHeader.self, forDecorationViewOfKind: UICollectionView.elementKindSectionHeader)
         // 1
         guard cache.isEmpty == true, let collectionView = collectionView else {
             return
@@ -95,38 +113,36 @@ class HomeLayout: UICollectionViewLayout {
         }
     }
     
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        
-        var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
-        
-        // Loop through the cache and look for items in the rect
-        for attributes in cache {
-            if attributes.frame.intersects(rect) {
-                visibleLayoutAttributes.append(attributes)
-            }
-        }
-        return visibleLayoutAttributes
-    }
-    
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return cache[indexPath.item]
     }
     
-    
+//    public override var collectionViewContentSize: CGSize {
+//        let itemsHeight = CGFloat(ceil(Double(numberOfItems)/2.0)) * itemSize
+//        let offset = collectionView?.contentOffset.y ?? 0
+//        if offset <= 0 {
+//            return CGSize(width: width, height: ceil(headerMaxHeight + menuMaxHeight + menuToCellsStartOffset + itemsHeight))
+//        }
+//        return CGSize(width: width, height: ceil(itemsHeight + cellOffset(forProgress: animationProgress)))
+//    }
 }
 
 // MARK: all funcs for header
 extension HomeLayout {
-    public override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-       var output: [UICollectionViewLayoutAttributes] = []
-        
-        let stndrd = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: elementKind, with: indexPath)
+    public override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+       var result: [UICollectionViewLayoutAttributes] = []
         
         if let headerAttr = headerAttributes() {
-            output.append(headerAttr)
+            result.append(headerAttr)
         }
         
-        return output
+        // Loop through the cache and look for items in the rect
+        for attributes in cache {
+            if attributes.frame.intersects(rect) {
+                result.append(attributes)
+            }
+        }
+        return result
     }
     
     private func headerAttributes() -> UICollectionViewLayoutAttributes? {
@@ -134,11 +150,10 @@ extension HomeLayout {
             return nil
         }
         let headerAttr = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, with: IndexPath(item: 0, section: 0))
-//        let headerAttr = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionReusableView, with: IndexPath(item: 0, section: 0))
+
         headerAttr.zIndex = 2
-        headerAttr.frame = CGRect(x: contentOffset.width, y: contentOffset.height, width: width, height: headerSize(forProgress: animationProgress))
+        headerAttr.frame = CGRect(x: (collectionView?.contentOffset.x)!, y: (collectionView?.contentOffset.y)!, width: (collectionView?.frame.width)!, height: headerSize(forProgress: animationProgress))
         return headerAttr
-        return nil
     }
     
     private func headerSize(forProgress progress: CGFloat) -> CGFloat {
@@ -154,6 +169,9 @@ extension HomeLayout {
     
     private func resetStoredValues() {
         print("Restored values()")
+    }
+    public override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        return true
     }
 }
 
